@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col">
           {/* Use font-serif for Playfair Display or add custom font in globals.css */}
-          <span className="text-[1.4rem] leading-none font-serif text-[#3a3a3a]">Jennifer Hahm, Ph.D.</span>
+          <span className="text-[1.4rem] leading-none font-serif text-[#3a3a3a]"> Dr. Serena Blake</span>
           <span className="text-[1.4rem] leading-none font-serif text-[#3a3a3a]">Psychological Services</span>
         </div>
       </header>
@@ -39,7 +39,7 @@ export default function Home() {
             Offering individual psychotherapy for adults via telehealth in Michigan and <span className="underline">most U.S. states</span> through PSYPACT participation
           </p>
           <a
-            href="#consultation"  
+            href="#consultation"
             className="font-freight-sans-bold-sc mt-12 w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-lg font-semibold rounded-[50%] px-14 py-8 shadow-lg transition-colors duration-200 font-serif tracking-wide leading-5"
             style={{ letterSpacing: "0.05em" }}
           >
@@ -51,9 +51,9 @@ export default function Home() {
       {/* About Section */}
       <section className="w-full flex flex-col md:flex-row bg-[#f8f8f3] py-40 pr-40 pl-52">
         <div className="md:w-1/2 flex-1 w-full md:pr-12 mb-10 md:mb-0">
-          <h2 className="font-freight-display-pro text-[#8d8a6f] text-3xl md:text-4xl mb-8">About Dr. Jennifer Hahm</h2>
+          <h2 className="font-freight-display-pro text-[#8d8a6f] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] mb-6 leading-8">
-            Finding time and opportunities to care for ourselves can be incredibly challenging in today's busy and demanding world. I believe therapy offers a dedicated space for self-care, providing the support and tools needed to improve this essential practice. Therapy can help individuals identify and clarify their goals, values, and the various elements that contribute to their well-being, recognizing that these aspects vary from person to person.
+          Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
           </p>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] leading-relaxed">
             I am dedicated to supporting this journey by offering active listening, psychological knowledge, empathy, compassion, and insights into behavioral patterns and tendencies. I hold a master's degree in Clinical Psychology from the Michigan School of Psychology (2012) and a Ph.D. in Counseling Psychology from Western Michigan University (2018). My experience spans therapy and psychological assessment in psychiatric inpatient units, academic medical centers, universities, and outpatient practice settings.
@@ -71,35 +71,36 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="w-full bg-[#f8f6ef] py-24 px-4 md:px-20 flex flex-col items-center">
-        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-16">
+      <section className="w-full bg-[#f8f6ef] py-24 px-20 md:px-18 flex flex-col items-center">
+        <h2 className="font-freight-display-light font-freight-display-pro text-[#8d8a6f] text-4xl md:text-5xl mb-32">Area of Focus</h2>
+        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-20">
           {/* Column 1 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-64 h-64 mb-8 rounded-full overflow-hidden shadow-lg">
-              <img src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full h-full object-cover grayscale" />
+            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
+              <img src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-pro text-[#5c5440] text-2xl mb-4">Therapy for Healthcare Providers<br/>and Students</h3>
-            <p className="font-freight-sans-pro text-[#7a7a6c] text-base leading-7">
+            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Anxiety & Stress Management </h3>
+            <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               The care you provide for others may be driving you to seek therapy, whether due to burnout, compassion fatigue, imposter syndrome, people-pleasing tendencies, or perfectionism. Whether you're in pre-professional school, undergoing training, or reflecting on a long career in healthcare, we can address the unique stressors of your professional environment along with any challenges you may be facing in other areas of your life.
             </p>
           </div>
           {/* Column 2 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-64 h-64 mb-8 rounded-full overflow-hidden shadow-lg">
+            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-2.jpg" alt="Therapy for Trauma and Grief" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-pro text-[#5c5440] text-2xl mb-4">Therapy for Trauma and Grief</h3>
-            <p className="font-freight-sans-pro text-[#7a7a6c] text-base leading-7">
+            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Relationship Counseling</h3>
+            <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               Life's challenges, whether a difficult childhood, a traumatic event or series of events, or the loss of someone or something deeply meaningful, can lead to profound experiences of trauma and grief. Therapy offers a supportive space to process these experiences, care for yourself amidst painful thoughts and emotions, and work toward a sense of grounding and meaning.
             </p>
           </div>
           {/* Column 3 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-64 h-64 mb-8 rounded-full overflow-hidden shadow-lg">
+            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-3.jpg" alt="Therapy for Second Generation Individuals In Immigrant Families" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-pro text-[#5c5440] text-2xl mb-4">Therapy for Second Generation<br/>Individuals In Immigrant Families</h3>
-            <p className="font-freight-sans-pro text-[#7a7a6c] text-base leading-7">
+            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Trauma Recovery</h3>
+            <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               Second-generation individuals in immigrant families, born in the U.S. to at least one parent born abroad, often navigate the complexities of multiple cultures and diverse expectations. This experience can bring challenges such as feeling like a foreigner in your own country and navigating strained family relationships. Therapy offers a supportive space to explore and process this unique aspect of your identity.
             </p>
           </div>

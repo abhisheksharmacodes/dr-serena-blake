@@ -56,3 +56,15 @@ body {
 .font-freight-display-pro {
   font-family: 'Freight Display Pro', Arial, Helvetica, sans-serif;
 }
+
+@font-face {
+  font-family: 'Freight Display Light';
+  src: url('/fonts/FreightDispProLight-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-freight-display-light {
+  font-family: 'Freight Display Light', Arial, Helvetica, sans-serif;
+}
