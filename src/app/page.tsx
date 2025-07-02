@@ -1,4 +1,6 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   return (
@@ -79,7 +81,7 @@ export default function Home() {
             <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Anxiety & Stress Management </h3>
+            <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Anxiety & Stress Management </h3>
             <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               The care you provide for others may be driving you to seek therapy, whether due to burnout, compassion fatigue, imposter syndrome, people-pleasing tendencies, or perfectionism. Whether you're in pre-professional school, undergoing training, or reflecting on a long career in healthcare, we can address the unique stressors of your professional environment along with any challenges you may be facing in other areas of your life.
             </p>
@@ -89,7 +91,7 @@ export default function Home() {
             <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-2.jpg" alt="Therapy for Trauma and Grief" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Relationship Counseling</h3>
+            <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Relationship Counseling</h3>
             <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               Life's challenges, whether a difficult childhood, a traumatic event or series of events, or the loss of someone or something deeply meaningful, can lead to profound experiences of trauma and grief. Therapy offers a supportive space to process these experiences, care for yourself amidst painful thoughts and emotions, and work toward a sense of grounding and meaning.
             </p>
@@ -99,13 +101,105 @@ export default function Home() {
             <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-3.jpg" alt="Therapy for Second Generation Individuals In Immigrant Families" className="w-full h-full object-cover" />
             </div>
-            <h3 className="font-freight-display-light text-[#656565] text-[25px] mb-4">Trauma Recovery</h3>
+            <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Trauma Recovery</h3>
             <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
               Second-generation individuals in immigrant families, born in the U.S. to at least one parent born abroad, often navigate the complexities of multiple cultures and diverse expectations. This experience can bring challenges such as feeling like a foreigner in your own country and navigating strained family relationships. Therapy offers a supportive space to explore and process this unique aspect of your identity.
             </p>
           </div>
         </div>
       </section>
+
+      {/* Rates and Insurance Section */}
+      <section className="w-full bg-[#97b1b1] py-14 px-44 flex flex-col items-center justify-center">
+        <h2 className="font-freight-display-pro text-[#222] text-3xl md:text-4xl mb-8 text-center">Rates and Insurance</h2>
+        <div className="flex flex-col items-center text-[#222] w-full">
+          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Session Fee - $200</p>
+          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Psychodiagnostic Evaluation - $225</p>
+          <p className="font-freight-sans-pro text-base md:text-xl mb-6 text-center">
+            I accept both private pay and insurance. I am in-network with BCBS and Aetna.
+          </p>
+          <p className="font-freight-sans-pro text-base md:text-xl text-center w-full">
+            For out-of-network plans, I've partnered with Mentaya using <a href="https://app.mentaya.com/p/U4Q2Q0Q0Q0" target="_blank" rel="noopener noreferrer" className="underline">this tool</a> to help you check your eligibility for reimbursement for my services.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <FAQSection />
     </div>
+  );
+}
+
+// FAQ Section Component
+const faqData = [
+  {
+    question: "What is the structure of Cognitive Behavioral Treatment for Insomnia (CBT-I)?",
+    answer: "CBT-I typically involves an assessment, sleep education, cognitive restructuring, stimulus control, sleep restriction, and relaxation techniques. Sessions are tailored to individual needs.",
+  },
+  {
+    question: "Do you treat children or adolescents?",
+    answer: "No, my practice is focused on adults (18+).",
+  },
+  {
+    question: "Which geographic regions do you serve?",
+    answer: "I serve clients in Michigan and most U.S. states via PSYPACT participation.",
+  },
+  {
+    question: "Do you offer in-person sessions?",
+    answer: "Currently, all sessions are offered via telehealth.",
+  },
+  {
+    question: "What technology do we use for virtual sessions?",
+    answer: "Sessions are conducted via secure, HIPAA-compliant video platforms such as Zoom.",
+  },
+  {
+    question: "What are your hours?",
+    answer: "Hours vary by week. Please contact me for current availability.",
+  },
+  {
+    question: "Do you take insurance?",
+    answer: "Yes, I am in-network with BCBS and Aetna, and offer support for out-of-network reimbursement.",
+  },
+  {
+    question: "What is the cost of therapy?",
+    answer: "Session fees and evaluation fees are listed above in the Rates and Insurance section.",
+  },
+  {
+    question: "What are the benefits of private pay therapy?",
+    answer: "Private pay offers greater privacy, flexibility, and control over your treatment without insurance restrictions.",
+  },
+];
+
+function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section className="w-full bg-white py-24 px-8 flex flex-col items-center justify-center">
+      <h2 className="font-freight-display-pro text-[#4a6a7b] text-4xl md:text-5xl mb-12 text-center">Frequently Asked Questions</h2>
+      <div className="w-full max-w-4xl">
+        <h3 className="font-freight-display-pro text-[#4a6a7b] text-3xl mb-8">Therapy</h3>
+        {faqData.map((item, idx) => (
+          <div key={idx}>
+            <button
+              className="flex cursor-pointer items-center w-full py-4 text-left text-[#4a6a7b] font-freight-sans-pro text-xl border-0 border-b border-[#b5c6d3] focus:outline-none transition-colors group"
+              onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
+              aria-expanded={openIndex === idx}
+            >
+              <span className="mr-4 flex items-center justify-center w-8 h-8 rounded-full border border-[#b5c6d3] text-[#4a6a7b] text-lg transition-transform group-aria-expanded:rotate-90">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 4.5L11.5 9L6.5 13.5" stroke="#4a6a7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+              <span className="flex-1">{item.question}</span>
+            </button>
+            {openIndex === idx && (
+              <div className="pl-12 mt-2 pr-4 pb-6 text-[#4a6a7b] text-lg font-freight-sans-pro animate-fade-in">
+                {item.answer}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
