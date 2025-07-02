@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Filter Playground</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: #f7fafc; }
+    .label { font-family: 'Inter', sans-serif; font-size: 1rem; color: #374151; }
+    .output { font-family: 'Fira Mono', monospace; font-size: 1.1rem; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10">
+  <h1 class="text-3xl font-bold mb-8">Tailwind CSS Filter Playground</h1>
+  <div class="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center w-full max-w-2xl">
+    <img id="sample-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=600&q=80" alt="Sample" class="w-80 h-60 object-cover rounded-lg mb-8 transition-all duration-200" />
+    <form id="filter-form" class="w-full flex flex-col gap-4 mb-8">
+      <label class="label flex flex-col">Blur: <input type="range" min="0" max="3" step="0.5" value="0" name="blur" /></label>
+      <label class="label flex flex-col">Brightness: <input type="range" min="0.5" max="2" step="0.05" value="1" name="brightness" /></label>
+      <label class="label flex flex-col">Contrast: <input type="range" min="0.5" max="2" step="0.05" value="1" name="contrast" /></label>
+      <label class="label flex flex-col">Grayscale: <input type="range" min="0" max="1" step="0.05" value="0" name="grayscale" /></label>
+      <label class="label flex flex-col">Hue Rotate: <input type="range" min="0" max="360" step="1" value="0" name="hue-rotate" /></label>
+      <label class="label flex flex-col">Invert: <input type="range" min="0" max="1" step="0.05" value="0" name="invert" /></label>
+      <label class="label flex flex-col">Saturate: <input type="range" min="0" max="2" step="0.05" value="1" name="saturate" /></label>
+      <label class="label flex flex-col">Sepia: <input type="range" min="0" max="1" step="0.05" value="0" name="sepia" /></label>
+    </form>
+    <span class="output block w-full bg-gray-100 rounded p-4 mt-4 text-gray-800 text-lg" id="tw-classes"></span>
+  </div>
+  <script>
+    const img = document.getElementById('sample-img');
+    const form = document.getElementById('filter-form');
+    const output = document.getElementById('tw-classes');
+
+    function getTailwindClasses(values) {
+      const classes = ['filter'];
+      if (values.blur > 0) classes.push(`blur-[${values.blur}px]`);
+      if (values.brightness != 1) classes.push(`brightness-[${values.brightness}]`);
+      if (values.contrast != 1) classes.push(`contrast-[${values.contrast}]`);
+      if (values.grayscale > 0) classes.push(`grayscale-[${values.grayscale}]`);
+      if (values['hue-rotate'] > 0) classes.push(`hue-rotate-[${values['hue-rotate']}deg]`);
+      if (values.invert > 0) classes.push(`invert-[${values.invert}]`);
+      if (values.saturate != 1) classes.push(`saturate-[${values.saturate}]`);
+      if (values.sepia > 0) classes.push(`sepia-[${values.sepia}]`);
+      return classes.join(' ');
+    }
+
+    function update() {
+      const values = Object.fromEntries(new FormData(form).entries());
+      // Convert all to numbers
+      Object.keys(values).forEach(k => values[k] = parseFloat(values[k]));
+      // Compose filter string for inline style
+      let filter = '';
+      if (values.blur > 0) filter += ` blur(${values.blur}px)`;
+      if (values.brightness != 1) filter += ` brightness(${values.brightness})`;
+      if (values.contrast != 1) filter += ` contrast(${values.contrast})`;
+      if (values.grayscale > 0) filter += ` grayscale(${values.grayscale})`;
+      if (values['hue-rotate'] > 0) filter += ` hue-rotate(${values['hue-rotate']}deg)`;
+      if (values.invert > 0) filter += ` invert(${values.invert})`;
+      if (values.saturate != 1) filter += ` saturate(${values.saturate})`;
+      if (values.sepia > 0) filter += ` sepia(${values.sepia})`;
+      img.style.filter = filter.trim();
+      output.textContent = getTailwindClasses(values);
+    }
+    form.addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html> 

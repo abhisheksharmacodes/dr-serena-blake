@@ -30,14 +30,14 @@ export default function Home() {
       <section className="relative w-full flex justify-center items-center" style={{ minHeight: "calc(100vh - 110px)" }}>
         {/* Background image: replace src with your actual ocean image for pixel-perfect match */}
         <div className="absolute px-14 py-10 pt-8 inset-0 w-full h-full z-0">
-          <video src="/hero.mp4" autoPlay muted loop className="w-full h-full object-cover" />
+          <video src="/hero.mp4" autoPlay muted loop className="w-full h-full object-cover brightness-[0.7]" />
           <div className="absolute inset-0 bg-black/5" /> {/* Overlay for contrast */}
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center w-full px-16 py-28">
-          <h1 className="font-freight-display-pro font-serif font-semibold text-white text-base/6 leading-40 text-center font-serif text-3xl sm:text-xl md:text-6xl drop-shadow-md">
+          <h1 className="font-freight-display-pro font-serif font-bold text-white text-base/6 leading-40 text-center font-serif text-3xl sm:text-xl md:text-6xl drop-shadow-md">
             Psychological Care for <span className="font-freight-display-pro block mt-2 text-3xl sm:text-5xl md:text-6xl font-bold">Change, Insight, and Well-Being</span>
           </h1>
-          <p className="font-freight-display-pro mt-10 mx-6 text-white text-md sm:text-xl md:text-[23px] text-center">
+          <p className="font-freight-display-pro mt-10 mx-6 text-white text-md sm:text-xl md:text-[25px] text-center">
             Offering individual psychotherapy for adults via telehealth in Michigan and <span className="underline">most U.S. states</span> through PSYPACT participation
           </p>
           <a
@@ -45,17 +45,17 @@ export default function Home() {
             className="font-freight-sans-bold-sc mt-12 w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-lg font-semibold rounded-[50%] px-14 py-8 shadow-lg transition-colors duration-200 font-serif tracking-wide leading-5"
             style={{ letterSpacing: "0.05em" }}
           >
-            SCHEDULE A CONSULTATION
+            BOOK A FREE CONSULT
           </a>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="w-full flex flex-col md:flex-row bg-[#f8f8f3] py-40 pr-40 pl-52">
+      <section className="w-full flex flex-col md:flex-row bg-white py-40 pr-40 pl-52">
         <div className="md:w-1/2 flex-1 w-full md:pr-12 mb-10 md:mb-0">
-          <h2 className="font-freight-display-pro text-[#8d8a6f] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
+          <h2 className="font-freight-display-pro font-semibold tracking-wide text-[#8d8a6f] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] mb-6 leading-8">
-          Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
+            Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
           </p>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] leading-relaxed">
             I am dedicated to supporting this journey by offering active listening, psychological knowledge, empathy, compassion, and insights into behavioral patterns and tendencies. I hold a master's degree in Clinical Psychology from the Michigan School of Psychology (2012) and a Ph.D. in Counseling Psychology from Western Michigan University (2018). My experience spans therapy and psychological assessment in psychiatric inpatient units, academic medical centers, universities, and outpatient practice settings.
@@ -74,7 +74,17 @@ export default function Home() {
 
       {/* Services Section */}
       <section className="w-full bg-[#f8f6ef] py-24 px-20 md:px-18 flex flex-col items-center">
-        <h2 className="font-freight-display-light font-freight-display-pro text-[#8d8a6f] text-4xl md:text-5xl mb-32">Area of Focus</h2>
+        <hr className="w-full border-1 border-[#aaa] -mt-38 mb-28" />
+        <div className="w-full flex flex-col items-center mb-16">
+          <h3 className="font-freight-display-light text-[#222] text-3xl w-210 md:text-[45px] text-center mb-8">
+            Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
+          </h3>
+          <p className="font-freight-sans-pro text-[#656565] text-[40px] md:text-[20px] text-center max-w-[71%] mb-8 leading-8">
+            You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don't have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
+          </p>
+          <hr className="w-full border-1 border-[#aaa] mt-8" />
+        </div>
+        <h2 className="font-freight-display-light font-freight-display-pro text-[#777] text-4xl md:text-5xl mb-32">Areas of Focus</h2>
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-20">
           {/* Column 1 */}
           <div className="flex flex-col items-center text-center">
@@ -113,8 +123,8 @@ export default function Home() {
       <section className="w-full bg-[#97b1b1] py-14 px-44 flex flex-col items-center justify-center">
         <h2 className="font-freight-display-pro text-[#222] text-3xl md:text-4xl mb-8 text-center">Rates and Insurance</h2>
         <div className="flex flex-col items-center text-[#222] w-full">
-          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Session Fee - $200</p>
-          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Psychodiagnostic Evaluation - $225</p>
+          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Individual session fee - $200</p>
+          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Couples session fee - $240</p>
           <p className="font-freight-sans-pro text-base md:text-xl mb-6 text-center">
             I accept both private pay and insurance. I am in-network with BCBS and Aetna.
           </p>
@@ -126,6 +136,44 @@ export default function Home() {
 
       {/* FAQ Section */}
       <FAQSection />
+
+      {/* Contact Form Section */}
+      <ContactFormSection />
+
+      {/* Quote Section */}
+      <section className="w-full relative flex items-center justify-center py-26">
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img src="/sea.jpg" alt="Ocean background" className="opacity-80 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-white/30" />
+        </div>
+        <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 py-20">
+          <blockquote className="font-freight-display-pro text-[#222] text-2xl md:text-4xl text-center w-200 mx-auto mb-6">
+            "I have come to believe that caring for myself is not self-indulgent. Caring for myself is an act of survival."
+          </blockquote>
+          <span className="font-freight-sans-pro text-[#222] text-lg md:text-xl text-center opacity-70">— Audre Lorde</span>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <footer className="w-full bg-[#f3f0e7] text-[#3a3a3a] pt-12 pb-6 flex flex-col items-center justify-center">
+        <h2 className="font-freight-display-pro text-3xl md:text-4xl mb-10 text-center">Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
+        <div className="flex flex-col items-center text-lg font-freight-sans-pro mb-2">
+          <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-xl">mailto:serena@blakepsychology.com</a>
+          <span>Phone: <a href="tel:2489398150" className="underline">(323) 555-0192</a></span>
+          <span className="mt-4">1287 Maplewood Drive, Los Angeles, CA 90026</span>
+        </div>
+        <nav className="flex flex-row items-center text-black justify-center gap-2 mt-4 mb-14 text-md font-freight-sans-pro">
+          <a href="#" className="underline">Home</a>
+          <a href="#" className="underline">Privacy Policy</a>
+          <a href="#" className="underline">Good Faith Estimate</a>
+        </nav>
+        <div className="mb-8">
+          <a href="#" className="underline text-lg text-black font-freight-sans-pro">Client Portal</a>
+        </div>
+        <div className="text-base font-freight-sans-pro text-xl mt-8 text-center">
+          © 2025 Dr. Serena Blake. Psychological Services, PLLC. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 }
@@ -133,40 +181,16 @@ export default function Home() {
 // FAQ Section Component
 const faqData = [
   {
-    question: "What is the structure of Cognitive Behavioral Treatment for Insomnia (CBT-I)?",
-    answer: "CBT-I typically involves an assessment, sleep education, cognitive restructuring, stimulus control, sleep restriction, and relaxation techniques. Sessions are tailored to individual needs.",
+    question: "Do you accept insurance?",
+    answer: "No, but a superbill is provided for self-submission.",
   },
   {
-    question: "Do you treat children or adolescents?",
-    answer: "No, my practice is focused on adults (18+).",
+    question: "Are online sessions available?",
+    answer: "Yes—all virtual sessions via Zoom.",
   },
   {
-    question: "Which geographic regions do you serve?",
-    answer: "I serve clients in Michigan and most U.S. states via PSYPACT participation.",
-  },
-  {
-    question: "Do you offer in-person sessions?",
-    answer: "Currently, all sessions are offered via telehealth.",
-  },
-  {
-    question: "What technology do we use for virtual sessions?",
-    answer: "Sessions are conducted via secure, HIPAA-compliant video platforms such as Zoom.",
-  },
-  {
-    question: "What are your hours?",
-    answer: "Hours vary by week. Please contact me for current availability.",
-  },
-  {
-    question: "Do you take insurance?",
-    answer: "Yes, I am in-network with BCBS and Aetna, and offer support for out-of-network reimbursement.",
-  },
-  {
-    question: "What is the cost of therapy?",
-    answer: "Session fees and evaluation fees are listed above in the Rates and Insurance section.",
-  },
-  {
-    question: "What are the benefits of private pay therapy?",
-    answer: "Private pay offers greater privacy, flexibility, and control over your treatment without insurance restrictions.",
+    question: "What is your cancellation policy?",
+    answer: "24-hour notice required.",
   },
 ];
 
@@ -187,7 +211,7 @@ function FAQSection() {
             >
               <span className="mr-4 flex items-center justify-center w-8 h-8 rounded-full border border-[#b5c6d3] text-[#4a6a7b] text-lg transition-transform group-aria-expanded:rotate-90">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.5 4.5L11.5 9L6.5 13.5" stroke="#4a6a7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M6.5 4.5L11.5 9L6.5 13.5" stroke="#4a6a7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
               <span className="flex-1">{item.question}</span>
@@ -199,6 +223,65 @@ function FAQSection() {
             )}
           </div>
         ))}
+      </div>
+    </section>
+  );
+}
+
+// Contact Form Section Component
+function ContactFormSection() {
+  return (
+    <section className="w-full bg-[#f7f9fa] py-24 px-4 flex flex-col items-center justify-center">
+      <div className="w-full max-w-xl bg-white border border-[#29543a] rounded-xl shadow-sm p-8 sm:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
+        <h2 className="font-freight-display-pro font-bold text-[#29543a] text-4xl mb-2 text-center">Get In Touch</h2>
+        <p className="font-freight-display-pro font-semibold text-[#628a71] text-lg mb-8 text-center">Simply fill out the brief fields below and Dr. Blake will be in touch with you soon, usually within one business day. This form is safe, private, and completely free.</p>
+        <form className="w-full flex flex-col gap-4">
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg mt-2">Name
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <input type="text" placeholder="Name" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+          </label>
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Phone
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <input type="tel" placeholder="(555) 234-5678" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+          </label>
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Email
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <input type="email" placeholder="you@example.com" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+          </label>
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">What brings you here?
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <textarea placeholder="How can I help you?" rows={3} required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a] resize-none" />
+          </label>
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Preferred time to reach you
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <input type="text" placeholder="e.g., Mornings, Afternoons, Evenings, Weekends" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+            <span className="text-[#628a71] font-semibold text-sm mt-1">Let us know when you're typically available for a call or consultation</span>
+          </label>
+          <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Preferred Contact Method
+            <span className="text-[#e53e3e] ml-1">*</span>
+            <select required className="mt-1 w-full border border-[#628a71] rounded-md px-4 py-2 text-lg font-freight-display-pro bg-white focus:outline-none focus:ring-2 focus:ring-[#29543a]">
+              <option value="">Select preferred method</option>
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="text">Text</option>
+            </select>
+          </label>
+          <label className="flex items-center mt-2">
+            <input type="checkbox" className="w-5 h-5 mr-2" required />
+            <span className="text-[#29543a] font-freight-display-pro text-xl">I agree to be contacted</span>
+          </label>
+          {/* reCAPTCHA placeholder */}
+          <div className="w-full bg-[#f7f7f7] border border-[#b2b2b2] rounded-md flex items-center px-4 py-4 mt-2 mb-2">
+            <input type="checkbox" className="w-5 h-5 mr-3" disabled />
+            <span className="text-[#29543a] text-base mr-4">I'm not a robot</span>
+            <span className="ml-auto text-xs text-[#b2b2b2]">reCAPTCHA<br />Privacy - Terms</span>
+          </div>
+          <button type="submit" className="w-full bg-[#29543a] hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
+          <div className="flex items-start mt-2">
+            <span className="text-[#29543a] text-xl mr-2">ⓘ</span>
+            <span className="text-[#628a71] font-semibold font-freight-display-pro text-xl">By clicking submit you consent to receive texts and emails from Dr. Serena Blake.</span>
+          </div>
+        </form>
       </div>
     </section>
   );
