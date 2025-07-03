@@ -54,70 +54,83 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="w-full flex flex-col gap-24 md:flex-row bg-white py-10 sm:py-20 md:py-40 pr-2 sm:pr-8 md:pr-40 pl-2 sm:pl-8 md:pl-52">
-        <div className="md:w-1/2 flex-1 w-full mb-10 md:mb-0">
-          <h2 className="font-freight-display-pro font-semibold tracking-wide text-[#777] mb-8"
-            style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)" }}
-          >About Dr. Serena Blake</h2>
-          <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] mb-6 leading-8">
-            Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
-          </p>
-          <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] leading-relaxed">
-            I am dedicated to supporting this journey by offering active listening, psychological knowledge, empathy, compassion, and insights into behavioral patterns and tendencies. I hold a master's degree in Clinical Psychology from the Michigan School of Psychology (2012) and a Ph.D. in Counseling Psychology from Western Michigan University (2018). My experience spans therapy and psychological assessment in psychiatric inpatient units, academic medical centers, universities, and outpatient practice settings.
-          </p>
+      <section className="w-full bg-white flex flex-col items-center">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-10 md:gap-16 lg:gap-24 py-10 sm:py-16 md:py-28 px-4 sm:px-8 md:px-16 lg:px-30 xl:px-40 xl:pl-44">
+          <h2 className="text-left font-freight-display-pro block md:hidden font-semibold tracking-wide text-[#777] mb-6 md:mb-8"
+            style={{ fontSize: "clamp(1.7rem, 3vw, 2.7rem)" }}
+          >About Dr. Jennifer Hahm</h2>
+          {/* Image on right for large, above for small */}
+          <div className="order-1 md:order-2 w-full md:w-[40%] max-w-xs md:max-w-[40%] h-auto flex-shrink-0 flex justify-center md:justify-end mb-8 md:mb-0">
+            <Image
+              src="/profile.jpg"
+              alt="Dr. Jennifer Hahm"
+              width={400}
+              height={500}
+              className="object-cover w-full h-auto"
+              priority
+            />
+          </div>
+          {/* Text content */}
+          <div className="order-2 md:order-1 flex-1 w-full flex flex-col justify-center px-4">
+            <h2 className="hidden md:block w-full font-freight-display-pro font-semibold tracking-wide text-[#777] mb-6 md:mb-8"
+              style={{ fontSize: "clamp(1.7rem, 3vw, 2.1rem)" }}
+            >About Dr. Serena Blake</h2>
+            <p className="font-freight-sans-pro text-[#7a7a6c] mb-6 leading-8"
+              style={{ fontSize: "clamp(1.05rem, 2.1vw, 1.25rem)", lineHeight: "clamp(1.7rem, 3vw, 2.2rem)" }}
+            >
+              Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
+            </p>
+            <p className="font-freight-sans-pro text-[#7a7a6c] leading-relaxed"
+              style={{ fontSize: "clamp(1.05rem, 2vw, 1.2rem)", lineHeight: "clamp(1.7rem, 3vw, 2.2rem)" }}
+            >
+              I am dedicated to supporting this journey by offering active listening, psychological knowledge, empathy, compassion, and insights into behavioral patterns and tendencies. I hold a master&apos;s degree in Clinical Psychology from the Michigan School of Psychology and a Ph.D. in Counseling Psychology. My experience spans therapy and psychological assessment in psychiatric inpatient units, academic medical centers, universities, and outpatient practice settings.
+            </p>
+          </div>
         </div>
-        <div className="w-full sm:w-[300px] md:w-[400px] flex justify-center md:justify-start relative h-content max-w-xs sm:max-w-none mx-auto">
-          <Image
-            src="/profile.webp"
-            alt="Dr. Jennifer Hahm"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <hr className="border-1 border-[#aaa] mt-8 mb-12 w-9/10" />
       </section>
 
       {/* Services Section */}
       <section className="w-full bg-[#f8f6ef] py-8 sm:py-8 md:py-12 px-2 sm:px-10 md:px-20 flex flex-col items-center">
-        <div className="w-full flex flex-col items-center mb-8 sm:mb-12 md:mb-16">
-          <h3 className="font-freight-display-light text-[#555] w-9/10 md:w-[90%] text-center mb-4 sm:mb-8"
-            style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}
+        <div className="w-full flex flex-col items-center mb-8 sm:mb-12 md:mb-22">
+          <h3 className="font-freight-display-light text-[#555] w-9/10 md:w-[60%] text-center mb-4 sm:mb-8"
+            style={{ fontSize: "clamp(1.8rem, 3vw, 3.4rem)" }}
           >
             Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
           </h3>
           <p className="font-freight-sans-pro text-[#222] text-lg md:text-[20px] text-center max-w-full w-[90%] md:max-w-[72%] mb-4 sm:mb-8 leading-7 sm:leading-8">
-            You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don't have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
+            You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don&apos;t have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
           </p>
           <hr className="w-full border-1 border-[#aaa] mt-8" />
         </div>
-        <h2 className="font-freight-display-light font-freight-display-pro text-[#555] mb-10 sm:mb-20 md:mb-32"
-          style={{ fontSize: "clamp(1.8rem, 3vw, 2.8rem)" }}
+        <h2 className="font-freight-display-light font-freight-display-pro text-[#555] mb-8 sm:mb-20 md:mb-28"
+          style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)" }}
         >Areas of Focus</h2>
         <div className="w-full max-w-[85%] md:max-w-full grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-20 md:gap-20">
           {/* Column 1 */}
           <div className="flex flex-col items-center text-center">
             <div className="w-full mb-4 rounded-full overflow-hidden shadow-lg">
-              <img src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full aspect-square object-cover" />
+              <Image src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full aspect-square object-cover" width={400} height={400} />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Anxiety & Stress Management </h3>
             <p className="font-freight-sans-pro text-[#222] text-base leading-7">
-              The care you provide for others may be driving you to seek therapy, whether due to burnout, compassion fatigue, imposter syndrome, people-pleasing tendencies, or perfectionism. Whether you're in pre-professional school, undergoing training, or reflecting on a long career in healthcare, we can address the unique stressors of your professional environment along with any challenges you may be facing in other areas of your life.
+              The care you provide for others may be driving you to seek therapy, whether due to burnout, compassion fatigue, imposter syndrome, people-pleasing tendencies, or perfectionism. Whether you&apos;re in pre-professional school, undergoing training, or reflecting on a long career in healthcare, we can address the unique stressors of your professional environment along with any challenges you may be facing in other areas of your life.
             </p>
           </div>
           {/* Column 2 */}
           <div className="flex flex-col items-center text-center">
             <div className="w-full mb-4 rounded-full overflow-hidden shadow-lg">
-              <img src="/service-2.jpg" alt="Therapy for Trauma and Grief" className="w-full aspect-square object-cover" />
+              <Image src="/service-2.jpg" alt="Therapy for Trauma and Grief" className="w-full aspect-square object-cover" width={400} height={400} />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Relationship Counseling</h3>
             <p className="font-freight-sans-pro text-[#222] text-base leading-7">
-              Life's challenges, whether a difficult childhood, a traumatic event or series of events, or the loss of someone or something deeply meaningful, can lead to profound experiences of trauma and grief. Therapy offers a supportive space to process these experiences, care for yourself amidst painful thoughts and emotions, and work toward a sense of grounding and meaning.
+              Life&apos;s challenges, whether a difficult childhood, a traumatic event or series of events, or the loss of someone or something deeply meaningful, can lead to profound experiences of trauma and grief. Therapy offers a supportive space to process these experiences, care for yourself amidst painful thoughts and emotions, and work toward a sense of grounding and meaning.
             </p>
           </div>
           {/* Column 3 */}
           <div className="flex flex-col items-center text-center">
             <div className="w-full mb-4 rounded-full overflow-hidden shadow-lg">
-              <img src="/service-3.jpg" alt="Therapy for Second Generation Individuals In Immigrant Families" className="w-full aspect-square object-cover" />
+              <Image src="/service-3.jpg" alt="Therapy for Second Generation Individuals In Immigrant Families" className="w-full aspect-square object-cover" width={400} height={400} />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Trauma Recovery</h3>
             <p className="font-freight-sans-pro text-[#656565] text-base leading-7">
@@ -130,7 +143,7 @@ export default function Home() {
       {/* Rates and Insurance Section */}
       <section className="w-full bg-[#97b1b1] py-8 sm:py-10 md:py-14 px-2 px-8 md:px-44 flex flex-col items-center justify-center">
         <h2 className="font-freight-display-light text-[#000] mb-4 sm:mb-8 text-center"
-          style={{ fontSize: "clamp(1.7rem, 3vw, 2.5rem)" }}
+          style={{ fontSize: "clamp(1.7rem, 3vw, 2.3rem)" }}
         >Rates and Insurance</h2>
         <div className="flex flex-col items-center text-[#000] w-full">
           <p className="font-freight-sans-pro text-base text-lg mb-2 sm:mb-4 md:mb-6 text-center">Individual session fee - $200</p>
@@ -139,7 +152,7 @@ export default function Home() {
             I accept both private pay and insurance. I am in-network with BCBS and Aetna.
           </p>
           <p className="font-freight-sans-pro text-lg md:text-xl text-center w-full">
-            For out-of-network plans, I've partnered with Mentaya using <a href="https://app.mentaya.com/p/U4Q2Q0Q0Q0" target="_blank" rel="noopener noreferrer" className="underline">this tool</a> to help you check your eligibility for reimbursement for my services.
+            For out-of-network plans, I&apos;ve partnered with Mentaya using <a href="https://app.mentaya.com/p/U4Q2Q0Q0Q0" target="_blank" rel="noopener noreferrer" className="underline">this tool</a> to help you check your eligibility for reimbursement for my services.
           </p>
         </div>
       </section>
@@ -153,12 +166,12 @@ export default function Home() {
       {/* Quote Section */}
       <section className="w-full relative flex items-center justify-center py-6 sm:py-10">
         <div className="absolute w-full h-full z-0">
-          <img src="/sea.png" alt="Ocean background" className="w-full h-full object-cover object-top" />
+          <Image src="/sea.png" alt="Ocean background" className="w-full h-full object-cover object-top" width={1200} height={400} />
           <div className="" />
         </div>
         <div className="relative z-10 w-full max-w-[60%] flex flex-col items-center justify-center px-2 sm:px-4 py-8 sm:py-20">
           <blockquote className="font-freight-display-light leading-8 sm:leading-12 text-[#222] text-2xl md:text-4xl text-center w-full mx-auto mb-4 sm:mb-8">
-            "I have come to believe that caring for myself is not self-indulgent. Caring for myself is an act of survival."
+            &quot;I have come to believe that caring for myself is not self-indulgent. Caring for myself is an act of survival.&quot;
           </blockquote>
           <span className="font-freight-sans-pro text-[#000] text-base sm:text-lg md:text-xl text-center">— Audre Lorde</span>
         </div>
@@ -167,7 +180,7 @@ export default function Home() {
       {/* Footer Section */}
       <footer className="w-full bg-[#f3f0e7] text-[#000] pt-6 sm:pt-10 md:pt-12 pb-4 sm:pb-6 flex flex-col items-center justify-center">
         <h2 className="font-freight-display-light text-xl sm:text-3xl md:text-4xl mb-4 sm:mb-10 text-center"
-          style={{ fontSize: "clamp(1.2rem, 3vw, 2.5rem)" }}
+          style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.7rem)" }}
         >Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
         <div className="flex flex-col items-center text-base sm:text-xl font-freight-sans-pro mb-2">
           <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-base sm:text-xl">serena@blakepsychology.com</a>
@@ -212,7 +225,7 @@ function FAQSection() {
   return (
     <section className="w-full bg-white text-[#4a6a7b] py-10 sm:py-16 md:py-24 px-6 md:px-8 flex flex-col items-center justify-center">
       <h2 className="font-freight-display-light text-2xl sm:text-4xl md:text-5xl mb-6 sm:mb-12 text-center"
-        style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)" }}
+        style={{ fontSize: "clamp(1.9rem, 3vw, 3rem)" }}
       >Frequently Asked Questions</h2>
       <div className="w-full max-w-full sm:max-w-2xl md:max-w-4xl">
         <h3 className="font-freight-display-light text-xl sm:text-3xl mb-4 sm:mb-8"
@@ -346,12 +359,12 @@ function ContactFormSection() {
   }
 
   return (
-    <section className="w-full bg-[#f7f9fa] py-10 sm:py-16 md:py-24 px-10 sm:px-4 flex flex-col items-center justify-center">
-      <div className="w-full md:max-w-xs sm:max-w-lg md:max-w-xl bg-white border border-[#29543a] rounded-xl shadow-sm p-4 sm:p-8 md:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
+    <section className="w-full bg-[#f7f9fa] py-10 sm:py-16 md:py-24 px-10 sm:px-12 flex flex-col items-center justify-center">
+      <div className="w-full md:w-[60%] bg-white border border-[#29543a] rounded-xl shadow-sm p-4 sm:p-8 md:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
         <h2 className="font-freight-display-pro font-bold text-[#29543a] text-4xl mb-4 text-center"
-          style={{ fontSize: "clamp(1.5rem, 4vw, 2.8rem)" }}
+          style={{ fontSize: "clamp(1.5rem, 3vw, 3rem)" }}
         >Get In Touch</h2>
-        <p className="font-freight-display-pro font-semibold text-[#628a71] text-lg mb-8 text-center"
+        <p className="font-freight-display-pro text-[#628a71] text-lg mb-8 text-center"
           style={{ fontSize: "clamp(1rem, 2vw, 1.3rem)" }}
         >Simply fill out the brief fields below and Dr. Blake will be in touch with you soon, usually within one business day. This form is safe, private, and completely free.</p>
         <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
@@ -431,7 +444,7 @@ function ContactFormSection() {
               onBlur={handleBlur}
               className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             />
-            <span className="text-[#628a71] font-semibold text-sm mt-1">Let us know when you're typically available for a call or consultation</span>
+            <span className="text-[#628a71] font-semibold text-sm mt-1">Let us know when you&apos;re typically available for a call or consultation</span>
             {(touched.time || submitAttempted) && errors.time && (
               <span className="text-[#e53e3e] text-sm mt-1 block">{errors.time}</span>
             )}
@@ -476,7 +489,7 @@ function ContactFormSection() {
           {/* reCAPTCHA placeholder */}
           <div className="w-full bg-[#f7f7f7] border border-[#b2b2b2] rounded-md flex items-center px-4 py-4 mt-2 mb-2">
             <input type="checkbox" className="w-5 h-5 mr-3" disabled />
-            <span className="text-[#29543a] text-base mr-4">I'm not a robot</span>
+            <span className="text-[#29543a] text-base mr-4">I&apos;m not a robot</span>
             <span className="ml-auto text-xs text-[#b2b2b2]">reCAPTCHA<br />Privacy - Terms</span>
           </div>
           <button type="submit" className="w-full bg-[#29543a] cursor-pointer hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
