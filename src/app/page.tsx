@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="min-h-screen w-full">
       {/* Header with logo and text */}
-      <header className="w-full flex items-center px-16 pt-12 pb-4 bg-black/5">
+      <header className="w-full flex items-center md:px-16 px-8 pt-12 pb-4 bg-black/5">
         {/* Elegant psychological consultancy logo SVG */}
         <div className="w-[60px] h-[60px] flex-shrink-0 flex items-center justify-center mr-2">
           {/* Abstract brain/tree logo for psychological consultancy */}
@@ -29,20 +29,20 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full flex justify-center items-center" style={{ minHeight: "calc(100vh - 110px)" }}>
         {/* Background image: replace src with your actual ocean image for pixel-perfect match */}
-        <div className="absolute px-14 py-10 pt-8 inset-0 w-full h-full z-0">
+        <div className="absolute px-2 sm:px-8 md:px-14 py-4 sm:py-8 md:py-10 pt-4 sm:pt-8 inset-0 w-full h-full z-0">
           <video src="/hero.mp4" autoPlay muted loop className="w-full h-full object-cover brightness-[0.8]" />
           <div className="absolute inset-0 bg-black/5" /> {/* Overlay for contrast */}
         </div>
-        <div className="relative z-10 flex flex-col items-center justify-center w-full px-16 py-28">
-          <h1 className="font-freight-display-pro font-serif font-bold text-white text-base/6 leading-40 text-center font-serif text-3xl sm:text-xl md:text-6xl drop-shadow-md">
-            Psychological Care for <span className="font-freight-display-pro block mt-2 text-3xl sm:text-5xl md:text-6xl font-bold">Change, Insight, and Well-Being</span>
+        <div className="relative z-10 flex flex-col items-center justify-center w-full px-2 sm:px-8 md:px-16 py-10 sm:py-20 md:py-28">
+          <h1 className="font-freight-display-pro font-serif font-bold text-white text-center text-4xl md:text-5xl drop-shadow-md">
+            Psychological Care for <span className="font-freight-display-pro block mt-2 text-4xl md:text-5xl font-bold">Change, Insight, and Well-Being</span>
           </h1>
-          <p className="font-freight-display-light mt-10 mx-6 text-white text-md sm:text-xl md:text-[26px] text-center">
+          <p className="font-freight-display-light mt-6 sm:mt-10 mx-4 sm:mx-6 text-white text-lg sm:text-2xl md:text-[26px] text-center">
             Offering individual psychotherapy for adults via telehealth in Michigan and <span className="underline">most U.S. states</span> through PSYPACT participation
           </p>
           <a
             href="#consultation"
-            className="font-freight-sans-pro font-bold mt-12 hover:opacity-80 w-full sm:w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-base sm:text-lg md:text-xl rounded-[50%] px-6 sm:px-14 py-4 sm:py-8 shadow-lg transition duration-300 tracking-[0.15em] leading-5"
+            className="font-freight-sans-pro font-bold mt-12 hover:opacity-80 w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-base md:text-[1rem] rounded-[50%] px-14 py-4 sm:py-6 shadow-lg transition duration-300 tracking-[0.15em] leading-5"
           >
             BOOK A FREE CONSULT
           </a>
@@ -50,7 +50,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="w-full flex flex-col md:flex-row bg-white py-40 pr-40 pl-52">
+      <section className="w-full flex flex-col md:flex-row bg-white py-10 sm:py-20 md:py-40 pr-2 sm:pr-8 md:pr-40 pl-2 sm:pl-8 md:pl-52">
         <div className="md:w-1/2 flex-1 w-full md:pr-12 mb-10 md:mb-0">
           <h2 className="font-freight-display-pro font-semibold tracking-wide text-[#777] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] mb-6 leading-8">
@@ -60,7 +60,7 @@ export default function Home() {
             I am dedicated to supporting this journey by offering active listening, psychological knowledge, empathy, compassion, and insights into behavioral patterns and tendencies. I hold a master's degree in Clinical Psychology from the Michigan School of Psychology (2012) and a Ph.D. in Counseling Psychology from Western Michigan University (2018). My experience spans therapy and psychological assessment in psychiatric inpatient units, academic medical centers, universities, and outpatient practice settings.
           </p>
         </div>
-        <div className="w-[400px] flex justify-center md:justify-start relative h-content">
+        <div className="w-full sm:w-[300px] md:w-[400px] flex justify-center md:justify-start relative h-content max-w-xs sm:max-w-none mx-auto">
           <Image
             src="/profile.webp"
             alt="Dr. Jennifer Hahm"
@@ -72,22 +72,22 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section className="w-full bg-[#f8f6ef] py-24 px-20 md:px-18 flex flex-col items-center">
-        <hr className="w-full border-1 border-[#aaa] -mt-38 mb-28" />
-        <div className="w-full flex flex-col items-center mb-16">
-          <h3 className="font-freight-display-light text-[#555] text-3xl w-210 md:text-[45px] text-center mb-8">
+      <section className="w-full bg-[#f8f6ef] py-10 sm:py-16 md:py-24 px-2 sm:px-6 md:px-20 flex flex-col items-center">
+        <hr className="w-full border-1 border-[#aaa] -mt-10 sm:-mt-20 md:-mt-38 mb-10 sm:mb-20 md:mb-28" />
+        <div className="w-full flex flex-col items-center mb-8 sm:mb-12 md:mb-16">
+          <h3 className="font-freight-display-light text-[#555] text-xl sm:text-3xl w-full sm:w-210 md:text-[45px] text-center mb-4 sm:mb-8">
             Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
           </h3>
-          <p className="font-freight-sans-pro text-[#656565] text-[40px] md:text-[20px] text-center max-w-[71%] mb-8 leading-8">
+          <p className="font-freight-sans-pro text-[#656565] text-base sm:text-lg md:text-[20px] text-center max-w-full sm:max-w-[71%] mb-4 sm:mb-8 leading-7 sm:leading-8">
             You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don't have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
           </p>
           <hr className="w-full border-1 border-[#aaa] mt-8" />
         </div>
-        <h2 className="font-freight-display-light font-freight-display-pro text-[#555] text-4xl md:text-5xl mb-32">Areas of Focus</h2>
-        <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-20">
+        <h2 className="font-freight-display-light font-freight-display-pro text-[#555] text-2xl sm:text-4xl md:text-5xl mb-10 sm:mb-20 md:mb-32">Areas of Focus</h2>
+        <div className="w-full max-w-7xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 md:gap-20">
           {/* Column 1 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
+            <div className="w-60 h-60 sm:w-80 sm:h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-1.jpg" alt="Therapy for Healthcare Providers and Students" className="w-full h-full object-cover" />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Anxiety & Stress Management </h3>
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
           {/* Column 2 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
+            <div className="w-60 h-60 sm:w-80 sm:h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-2.jpg" alt="Therapy for Trauma and Grief" className="w-full h-full object-cover" />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Relationship Counseling</h3>
@@ -107,7 +107,7 @@ export default function Home() {
           </div>
           {/* Column 3 */}
           <div className="flex flex-col items-center text-center">
-            <div className="w-80 h-80 mb-4 rounded-full overflow-hidden shadow-lg">
+            <div className="w-60 h-60 sm:w-80 sm:h-80 mb-4 rounded-full overflow-hidden shadow-lg">
               <img src="/service-3.jpg" alt="Therapy for Second Generation Individuals In Immigrant Families" className="w-full h-full object-cover" />
             </div>
             <h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Trauma Recovery</h3>
@@ -119,15 +119,15 @@ export default function Home() {
       </section>
 
       {/* Rates and Insurance Section */}
-      <section className="w-full bg-[#97b1b1] py-14 px-44 flex flex-col items-center justify-center">
-        <h2 className="font-freight-display-light text-[#000] text-3xl md:text-4xl mb-8 text-center">Rates and Insurance</h2>
+      <section className="w-full bg-[#97b1b1] py-8 sm:py-10 md:py-14 px-2 sm:px-8 md:px-44 flex flex-col items-center justify-center">
+        <h2 className="font-freight-display-light text-[#000] text-2xl sm:text-3xl md:text-4xl mb-4 sm:mb-8 text-center">Rates and Insurance</h2>
         <div className="flex flex-col items-center text-[#222] w-full">
-          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Individual session fee - $200</p>
-          <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Couples session fee - $240</p>
-          <p className="font-freight-sans-pro text-base md:text-xl mb-6 text-center">
+          <p className="font-freight-sans-pro text-base sm:text-lg md:text-xl mb-2 sm:mb-4 md:mb-6 text-center">Individual session fee - $200</p>
+          <p className="font-freight-sans-pro text-base sm:text-lg md:text-xl mb-2 sm:mb-4 md:mb-6 text-center">Couples session fee - $240</p>
+          <p className="font-freight-sans-pro text-sm sm:text-base md:text-xl mb-2 sm:mb-4 md:mb-6 text-center">
             I accept both private pay and insurance. I am in-network with BCBS and Aetna.
           </p>
-          <p className="font-freight-sans-pro text-base md:text-xl text-center w-full">
+          <p className="font-freight-sans-pro text-sm sm:text-base md:text-xl text-center w-full">
             For out-of-network plans, I've partnered with Mentaya using <a href="https://app.mentaya.com/p/U4Q2Q0Q0Q0" target="_blank" rel="noopener noreferrer" className="underline">this tool</a> to help you check your eligibility for reimbursement for my services.
           </p>
         </div>
@@ -140,36 +140,36 @@ export default function Home() {
       <ContactFormSection />
 
       {/* Quote Section */}
-      <section className="w-full relative flex items-center justify-center py-10">
+      <section className="w-full relative flex items-center justify-center py-6 sm:py-10">
         <div className="absolute inset-0 w-full h-full z-0">
           <img src="/sea.jpg" alt="Ocean background" className="opacity-80 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/30" />
         </div>
-        <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 py-20">
-          <blockquote className="font-freight-display-light leading-12 text-[#222] text-2xl md:text-4xl text-center w-200 mx-auto mb-8">
+        <div className="relative z-10 w-full flex flex-col items-center justify-center px-2 sm:px-4 py-8 sm:py-20">
+          <blockquote className="font-freight-display-light leading-8 sm:leading-12 text-[#222] text-lg sm:text-2xl md:text-4xl text-center w-full sm:w-200 mx-auto mb-4 sm:mb-8">
             "I have come to believe that caring for myself is not self-indulgent. Caring for myself is an act of survival."
           </blockquote>
-          <span className="font-freight-sans-pro text-[#111] text-lg md:text-xl text-center opacity-70">— Audre Lorde</span>
+          <span className="font-freight-sans-pro text-[#111] text-base sm:text-lg md:text-xl text-center opacity-70">— Audre Lorde</span>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer className="w-full bg-[#f3f0e7] text-[#3a3a3a] pt-12 pb-6 flex flex-col items-center justify-center">
-        <h2 className="font-freight-display-light text-3xl md:text-4xl mb-10 text-center">Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
-        <div className="flex flex-col items-center text-lg font-freight-sans-pro mb-2">
-          <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-xl">serena@blakepsychology.com</a>
+      <footer className="w-full bg-[#f3f0e7] text-[#3a3a3a] pt-6 sm:pt-10 md:pt-12 pb-4 sm:pb-6 flex flex-col items-center justify-center">
+        <h2 className="font-freight-display-light text-xl sm:text-3xl md:text-4xl mb-4 sm:mb-10 text-center">Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
+        <div className="flex flex-col items-center text-base sm:text-lg font-freight-sans-pro mb-2">
+          <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-base sm:text-xl">serena@blakepsychology.com</a>
           <span>Phone: <a href="tel:2489398150" className="text-black underline">(323) 555-0192</a></span>
-          <span className="mt-4">1287 Maplewood Drive, Los Angeles, CA 90026</span>
+          <span className="mt-2 sm:mt-4">1287 Maplewood Drive, Los Angeles, CA 90026</span>
         </div>
-        <nav className="flex flex-row items-center text-black justify-center gap-2 mt-4 mb-14 text-md font-freight-sans-pro">
+        <nav className="flex flex-row flex-wrap items-center text-black justify-center gap-2 mt-2 sm:mt-4 mb-6 sm:mb-14 text-sm sm:text-md font-freight-sans-pro">
           <a href="#" className="underline">Home</a>
           <a href="#" className="underline">Privacy Policy</a>
           <a href="#" className="underline">Good Faith Estimate</a>
         </nav>
-        <div className="mb-8">
-          <a href="#" className="underline text-lg text-black font-freight-sans-pro">Client Portal</a>
+        <div className="mb-4 sm:mb-8">
+          <a href="#" className="underline text-base sm:text-lg text-black font-freight-sans-pro">Client Portal</a>
         </div>
-        <div className="text-base font-freight-sans-pro text-xl mt-8 text-center">
+        <div className="text-xs sm:text-base font-freight-sans-pro text-xl mt-4 sm:mt-8 text-center">
           © 2025 Dr. Serena Blake. Psychological Services, PLLC. All rights reserved.
         </div>
       </footer>
@@ -197,10 +197,10 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-white py-24 px-8 text-[#4a6a7b] flex flex-col items-center justify-center">
-      <h2 className="font-freight-display-light text-4xl md:text-5xl mb-12 text-center">Frequently Asked Questions</h2>
-      <div className="w-full max-w-4xl">
-        <h3 className="font-freight-display-light text-3xl mb-8">Therapy</h3>
+    <section className="w-full bg-white text-[#4a6a7b] py-10 sm:py-16 md:py-24 px-2 sm:px-6 md:px-8 flex flex-col items-center justify-center">
+      <h2 className="font-freight-display-light text-2xl sm:text-4xl md:text-5xl mb-6 sm:mb-12 text-center">Frequently Asked Questions</h2>
+      <div className="w-full max-w-full sm:max-w-2xl md:max-w-4xl">
+        <h3 className="font-freight-display-light text-xl sm:text-3xl mb-4 sm:mb-8">Therapy</h3>
         {faqData.map((item, idx) => (
           <div key={idx}>
             <button
@@ -216,7 +216,7 @@ function FAQSection() {
               <span className="flex-1 text-2xl font-freight-display-light">{item.question}</span>
             </button>
             {openIndex === idx && (
-              <div className="pl-12 mt-2 pr-4 pb-6 text-2xl font-freight-display-light animate-fade-in">
+              <div className="pl-4 sm:pl-8 md:pl-12 mt-2 pr-2 sm:pr-4 pb-4 sm:pb-6 text-base sm:text-2xl font-freight-display-light animate-fade-in">
                 {item.answer}
               </div>
             )}
@@ -329,8 +329,8 @@ function ContactFormSection() {
   }
 
   return (
-    <section className="w-full bg-[#f7f9fa] py-24 px-4 flex flex-col items-center justify-center">
-      <div className="w-full max-w-xl bg-white border border-[#29543a] rounded-xl shadow-sm p-8 sm:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
+    <section className="w-full bg-[#f7f9fa] py-10 sm:py-16 md:py-24 px-2 sm:px-4 flex flex-col items-center justify-center">
+      <div className="w-full max-w-xs sm:max-w-lg md:max-w-xl bg-white border border-[#29543a] rounded-xl shadow-sm p-4 sm:p-8 md:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
         <h2 className="font-freight-display-pro font-bold text-[#29543a] text-4xl mb-4 text-center">Get In Touch</h2>
         <p className="font-freight-display-pro font-semibold text-[#628a71] text-lg mb-8 text-center">Simply fill out the brief fields below and Dr. Blake will be in touch with you soon, usually within one business day. This form is safe, private, and completely free.</p>
         <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
