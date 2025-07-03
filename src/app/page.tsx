@@ -30,20 +30,19 @@ export default function Home() {
       <section className="relative w-full flex justify-center items-center" style={{ minHeight: "calc(100vh - 110px)" }}>
         {/* Background image: replace src with your actual ocean image for pixel-perfect match */}
         <div className="absolute px-14 py-10 pt-8 inset-0 w-full h-full z-0">
-          <video src="/hero.mp4" autoPlay muted loop className="w-full h-full object-cover brightness-[0.7]" />
+          <video src="/hero.mp4" autoPlay muted loop className="w-full h-full object-cover brightness-[0.8]" />
           <div className="absolute inset-0 bg-black/5" /> {/* Overlay for contrast */}
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center w-full px-16 py-28">
           <h1 className="font-freight-display-pro font-serif font-bold text-white text-base/6 leading-40 text-center font-serif text-3xl sm:text-xl md:text-6xl drop-shadow-md">
             Psychological Care for <span className="font-freight-display-pro block mt-2 text-3xl sm:text-5xl md:text-6xl font-bold">Change, Insight, and Well-Being</span>
           </h1>
-          <p className="font-freight-display-pro mt-10 mx-6 text-white text-md sm:text-xl md:text-[25px] text-center">
+          <p className="font-freight-display-light mt-10 mx-6 text-white text-md sm:text-xl md:text-[26px] text-center">
             Offering individual psychotherapy for adults via telehealth in Michigan and <span className="underline">most U.S. states</span> through PSYPACT participation
           </p>
           <a
             href="#consultation"
-            className="font-freight-sans-bold-sc mt-12 w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-lg font-semibold rounded-[50%] px-14 py-8 shadow-lg transition-colors duration-200 font-serif tracking-wide leading-5"
-            style={{ letterSpacing: "0.05em" }}
+            className="font-freight-sans-pro font-bold mt-12 hover:opacity-80 w-full sm:w-[280px] text-center bg-[#94b0b0] hover:bg-[#94b0b0] text-white text-base sm:text-lg md:text-xl rounded-[50%] px-6 sm:px-14 py-4 sm:py-8 shadow-lg transition duration-300 tracking-[0.15em] leading-5"
           >
             BOOK A FREE CONSULT
           </a>
@@ -53,7 +52,7 @@ export default function Home() {
       {/* About Section */}
       <section className="w-full flex flex-col md:flex-row bg-white py-40 pr-40 pl-52">
         <div className="md:w-1/2 flex-1 w-full md:pr-12 mb-10 md:mb-0">
-          <h2 className="font-freight-display-pro font-semibold tracking-wide text-[#8d8a6f] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
+          <h2 className="font-freight-display-pro font-semibold tracking-wide text-[#777] text-3xl md:text-4xl mb-8">About Dr. Serena Blake</h2>
           <p className="font-freight-sans-pro text-[#7a7a6c] text-[1.2rem] mb-6 leading-8">
             Dr. Serena Blake is a licensed clinical psychologist (PsyD) based in Los Angeles, CA, with eight years of experience and over 500 client sessions. She blends evidence-based approaches—like cognitive-behavioral therapy and mindfulness—with compassionate, personalized care to help you overcome anxiety, strengthen relationships, and heal from trauma. Whether you meet in her Maplewood Drive office or connect virtually via Zoom, Dr. Blake is committed to creating a safe, supportive space for you to thrive.
           </p>
@@ -76,7 +75,7 @@ export default function Home() {
       <section className="w-full bg-[#f8f6ef] py-24 px-20 md:px-18 flex flex-col items-center">
         <hr className="w-full border-1 border-[#aaa] -mt-38 mb-28" />
         <div className="w-full flex flex-col items-center mb-16">
-          <h3 className="font-freight-display-light text-[#222] text-3xl w-210 md:text-[45px] text-center mb-8">
+          <h3 className="font-freight-display-light text-[#555] text-3xl w-210 md:text-[45px] text-center mb-8">
             Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
           </h3>
           <p className="font-freight-sans-pro text-[#656565] text-[40px] md:text-[20px] text-center max-w-[71%] mb-8 leading-8">
@@ -84,7 +83,7 @@ export default function Home() {
           </p>
           <hr className="w-full border-1 border-[#aaa] mt-8" />
         </div>
-        <h2 className="font-freight-display-light font-freight-display-pro text-[#777] text-4xl md:text-5xl mb-32">Areas of Focus</h2>
+        <h2 className="font-freight-display-light font-freight-display-pro text-[#555] text-4xl md:text-5xl mb-32">Areas of Focus</h2>
         <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-20">
           {/* Column 1 */}
           <div className="flex flex-col items-center text-center">
@@ -121,7 +120,7 @@ export default function Home() {
 
       {/* Rates and Insurance Section */}
       <section className="w-full bg-[#97b1b1] py-14 px-44 flex flex-col items-center justify-center">
-        <h2 className="font-freight-display-pro text-[#222] text-3xl md:text-4xl mb-8 text-center">Rates and Insurance</h2>
+        <h2 className="font-freight-display-light text-[#000] text-3xl md:text-4xl mb-8 text-center">Rates and Insurance</h2>
         <div className="flex flex-col items-center text-[#222] w-full">
           <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Individual session fee - $200</p>
           <p className="font-freight-sans-pro text-lg md:text-xl mb-6 text-center">Couples session fee - $240</p>
@@ -141,25 +140,25 @@ export default function Home() {
       <ContactFormSection />
 
       {/* Quote Section */}
-      <section className="w-full relative flex items-center justify-center py-26">
+      <section className="w-full relative flex items-center justify-center py-10">
         <div className="absolute inset-0 w-full h-full z-0">
           <img src="/sea.jpg" alt="Ocean background" className="opacity-80 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-white/30" />
         </div>
         <div className="relative z-10 w-full flex flex-col items-center justify-center px-4 py-20">
-          <blockquote className="font-freight-display-pro text-[#222] text-2xl md:text-4xl text-center w-200 mx-auto mb-6">
+          <blockquote className="font-freight-display-light leading-12 text-[#222] text-2xl md:text-4xl text-center w-200 mx-auto mb-8">
             "I have come to believe that caring for myself is not self-indulgent. Caring for myself is an act of survival."
           </blockquote>
-          <span className="font-freight-sans-pro text-[#222] text-lg md:text-xl text-center opacity-70">— Audre Lorde</span>
+          <span className="font-freight-sans-pro text-[#111] text-lg md:text-xl text-center opacity-70">— Audre Lorde</span>
         </div>
       </section>
 
       {/* Footer Section */}
       <footer className="w-full bg-[#f3f0e7] text-[#3a3a3a] pt-12 pb-6 flex flex-col items-center justify-center">
-        <h2 className="font-freight-display-pro text-3xl md:text-4xl mb-10 text-center">Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
+        <h2 className="font-freight-display-light text-3xl md:text-4xl mb-10 text-center">Dr. Serena Blake, PsyD (Clinical Psychologist)</h2>
         <div className="flex flex-col items-center text-lg font-freight-sans-pro mb-2">
-          <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-xl">mailto:serena@blakepsychology.com</a>
-          <span>Phone: <a href="tel:2489398150" className="underline">(323) 555-0192</a></span>
+          <a href="mailto:jennifer@drjenniferhahm.com" className="underline mb-1 text-xl">serena@blakepsychology.com</a>
+          <span>Phone: <a href="tel:2489398150" className="text-black underline">(323) 555-0192</a></span>
           <span className="mt-4">1287 Maplewood Drive, Los Angeles, CA 90026</span>
         </div>
         <nav className="flex flex-row items-center text-black justify-center gap-2 mt-4 mb-14 text-md font-freight-sans-pro">
@@ -198,14 +197,14 @@ function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="w-full bg-white py-24 px-8 flex flex-col items-center justify-center">
-      <h2 className="font-freight-display-pro text-[#4a6a7b] text-4xl md:text-5xl mb-12 text-center">Frequently Asked Questions</h2>
+    <section className="w-full bg-white py-24 px-8 text-[#4a6a7b] flex flex-col items-center justify-center">
+      <h2 className="font-freight-display-light text-4xl md:text-5xl mb-12 text-center">Frequently Asked Questions</h2>
       <div className="w-full max-w-4xl">
-        <h3 className="font-freight-display-pro text-[#4a6a7b] text-3xl mb-8">Therapy</h3>
+        <h3 className="font-freight-display-light text-3xl mb-8">Therapy</h3>
         {faqData.map((item, idx) => (
           <div key={idx}>
             <button
-              className="flex cursor-pointer items-center w-full py-4 text-left text-[#4a6a7b] font-freight-sans-pro text-xl border-0 border-b border-[#b5c6d3] focus:outline-none transition-colors group"
+              className="flex cursor-pointer items-center w-full py-4 text-left font-freight-sans-pro text-xl border-0 border-b border-[#b5c6d3] focus:outline-none transition-colors group"
               onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
               aria-expanded={openIndex === idx}
             >
@@ -214,10 +213,10 @@ function FAQSection() {
                   <path d="M6.5 4.5L11.5 9L6.5 13.5" stroke="#4a6a7b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </span>
-              <span className="flex-1">{item.question}</span>
+              <span className="flex-1 text-2xl font-freight-display-light">{item.question}</span>
             </button>
             {openIndex === idx && (
-              <div className="pl-12 mt-2 pr-4 pb-6 text-[#4a6a7b] text-lg font-freight-sans-pro animate-fade-in">
+              <div className="pl-12 mt-2 pr-4 pb-6 text-2xl font-freight-display-light animate-fade-in">
                 {item.answer}
               </div>
             )}
@@ -230,53 +229,236 @@ function FAQSection() {
 
 // Contact Form Section Component
 function ContactFormSection() {
+  interface FormValues {
+    name: string;
+    phone: string;
+    email: string;
+    message: string;
+    time: string;
+    method: string;
+    agree: boolean;
+  }
+  interface FormTouched {
+    name: boolean;
+    phone: boolean;
+    email: boolean;
+    message: boolean;
+    time: boolean;
+    method: boolean;
+    agree: boolean;
+  }
+  interface FormErrors {
+    name?: string;
+    phone?: string;
+    email?: string;
+    message?: string;
+    time?: string;
+    method?: string;
+    agree?: string;
+  }
+
+  const [values, setValues] = useState<FormValues>({
+    name: "",
+    phone: "",
+    email: "",
+    message: "",
+    time: "",
+    method: "",
+    agree: false,
+  });
+  const [touched, setTouched] = useState<FormTouched>({
+    name: false,
+    phone: false,
+    email: false,
+    message: false,
+    time: false,
+    method: false,
+    agree: false,
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
+
+  function validate(values: FormValues): FormErrors {
+    const errors: FormErrors = {};
+    if (!values.name) errors.name = "Name is required.";
+    if (!values.phone) errors.phone = "Phone is required.";
+    else if (!/^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/.test(values.phone)) errors.phone = "Enter a valid phone number.";
+    if (!values.email) errors.email = "Email is required.";
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(values.email)) errors.email = "Enter a valid email address.";
+    if (!values.message) errors.message = "This field is required.";
+    if (!values.time) errors.time = "This field is required.";
+    if (!values.method) errors.method = "Please select a contact method.";
+    if (!values.agree) errors.agree = "You must agree to be contacted.";
+    return errors;
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    const { name, value, type } = e.target;
+    if (type === "checkbox") {
+      const checked = (e.target as HTMLInputElement).checked;
+      setValues((v) => ({ ...v, [name]: checked }));
+    } else {
+      setValues((v) => ({ ...v, [name]: value }));
+    }
+  }
+
+  function handleBlur(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
+    const { name } = e.target;
+    setTouched((t) => ({ ...t, [name]: true }));
+    setErrors(validate({ ...values, [name]: e.target.value }));
+  }
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitAttempted(true);
+    const validationErrors = validate(values);
+    setErrors(validationErrors);
+    setTouched({
+      name: true,
+      phone: true,
+      email: true,
+      message: true,
+      time: true,
+      method: true,
+      agree: true,
+    });
+    if (Object.keys(validationErrors).length === 0) {
+      // Submit form logic here
+      alert("Form submitted!");
+    }
+  }
+
   return (
     <section className="w-full bg-[#f7f9fa] py-24 px-4 flex flex-col items-center justify-center">
       <div className="w-full max-w-xl bg-white border border-[#29543a] rounded-xl shadow-sm p-8 sm:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
-        <h2 className="font-freight-display-pro font-bold text-[#29543a] text-4xl mb-2 text-center">Get In Touch</h2>
+        <h2 className="font-freight-display-pro font-bold text-[#29543a] text-4xl mb-4 text-center">Get In Touch</h2>
         <p className="font-freight-display-pro font-semibold text-[#628a71] text-lg mb-8 text-center">Simply fill out the brief fields below and Dr. Blake will be in touch with you soon, usually within one business day. This form is safe, private, and completely free.</p>
-        <form className="w-full flex flex-col gap-4">
+        <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg mt-2">Name
             <span className="text-[#e53e3e] ml-1">*</span>
-            <input type="text" placeholder="Name" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+            />
+            {(touched.name || submitAttempted) && errors.name && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.name}</span>
+            )}
           </label>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Phone
             <span className="text-[#e53e3e] ml-1">*</span>
-            <input type="tel" placeholder="(555) 234-5678" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="(555) 234-5678"
+              required
+              value={values.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+            />
+            {(touched.phone || submitAttempted) && errors.phone && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.phone}</span>
+            )}
           </label>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Email
             <span className="text-[#e53e3e] ml-1">*</span>
-            <input type="email" placeholder="you@example.com" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+            <input
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+            />
+            {(touched.email || submitAttempted) && errors.email && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.email}</span>
+            )}
           </label>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">What brings you here?
             <span className="text-[#e53e3e] ml-1">*</span>
-            <textarea placeholder="How can I help you?" rows={3} required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a] resize-none" />
+            <textarea
+              name="message"
+              placeholder="How can I help you?"
+              rows={3}
+              required
+              value={values.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a] resize-none"
+            />
+            {(touched.message || submitAttempted) && errors.message && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.message}</span>
+            )}
           </label>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Preferred time to reach you
             <span className="text-[#e53e3e] ml-1">*</span>
-            <input type="text" placeholder="e.g., Mornings, Afternoons, Evenings, Weekends" required className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]" />
+            <input
+              type="text"
+              name="time"
+              placeholder="e.g., Mornings, Afternoons, Evenings, Weekends"
+              required
+              value={values.time}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-pro placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+            />
             <span className="text-[#628a71] font-semibold text-sm mt-1">Let us know when you're typically available for a call or consultation</span>
+            {(touched.time || submitAttempted) && errors.time && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.time}</span>
+            )}
           </label>
           <label className="font-freight-display-pro font-semibold text-[#628a71] text-lg">Preferred Contact Method
             <span className="text-[#e53e3e] ml-1">*</span>
-            <select required className="mt-1 w-full border border-[#628a71] rounded-md px-4 py-2 text-lg font-freight-display-pro bg-white focus:outline-none focus:ring-2 focus:ring-[#29543a]">
+            <select
+              name="method"
+              required
+              value={values.method}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className="mt-1 w-full border border-[#628a71] rounded-md px-4 py-2 text-lg font-freight-display-pro bg-white focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+            >
               <option value="">Select preferred method</option>
               <option value="phone">Phone</option>
               <option value="email">Email</option>
               <option value="text">Text</option>
             </select>
+            {(touched.method || submitAttempted) && errors.method && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{errors.method}</span>
+            )}
           </label>
-          <label className="flex items-center mt-2">
-            <input type="checkbox" className="w-5 h-5 mr-2" required />
-            <span className="text-[#29543a] font-freight-display-pro text-xl">I agree to be contacted</span>
+          <label className="flex flex-col">
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                name="agree"
+                className="w-5 h-5 mr-2"
+                required
+                checked={values.agree}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              <span className="text-[#628a71] font-freight-display-pro text-lg">I agree to be contacted</span>
+            </div>
+            {(touched.agree || submitAttempted) && errors.agree && (
+              <span className="text-[#e53e3e] font-freight-display-pro text-sm block mt-1">{errors.agree}</span>
+            )}
           </label>
+
           {/* reCAPTCHA placeholder */}
           <div className="w-full bg-[#f7f7f7] border border-[#b2b2b2] rounded-md flex items-center px-4 py-4 mt-2 mb-2">
             <input type="checkbox" className="w-5 h-5 mr-3" disabled />
             <span className="text-[#29543a] text-base mr-4">I'm not a robot</span>
             <span className="ml-auto text-xs text-[#b2b2b2]">reCAPTCHA<br />Privacy - Terms</span>
           </div>
-          <button type="submit" className="w-full bg-[#29543a] hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
+          <button type="submit" className="w-full bg-[#29543a] cursor-pointer hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
           <div className="flex items-start mt-2">
             <span className="text-[#29543a] text-xl mr-2">ⓘ</span>
             <span className="text-[#628a71] font-semibold font-freight-display-pro text-xl">By clicking submit you consent to receive texts and emails from Dr. Serena Blake.</span>
