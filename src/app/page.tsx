@@ -507,7 +507,7 @@ function ContactFormSection() {
           {/* Google reCAPTCHA v2 Checkbox */}
           <div className="w-full flex flex-col items-center my-2">
             <ReCAPTCHA
-              sitekey={RECAPTCHA_SITE_KEY}
+              sitekey={'6LdLQncrAAAAAOyi8q91k5LWg2poAD0sCgbcm7wk'}
               onChange={token => setRecaptchaToken(token)}
             />
             {recaptchaError && (
