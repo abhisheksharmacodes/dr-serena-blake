@@ -171,7 +171,7 @@ export default function Home() {
       {/* Quote Section */}
       <section className="w-full relative flex items-center justify-center py-6 sm:py-10">
         <div className="absolute w-full h-full z-0">
-          <FadeInOnScroll><Image src="/sea.png" alt="Ocean background" className="w-full h-full object-cover object-top" width={1200} height={400} /></FadeInOnScroll>
+          <Image src="/sea.png" alt="Ocean background" className="w-full h-full object-cover object-top" width={1200} height={400} />
           <div className="" />
         </div>
         <div className="relative z-10 w-full max-w-[60%] flex flex-col items-center justify-center px-2 sm:px-4 py-8 sm:py-20">
