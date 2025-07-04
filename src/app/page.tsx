@@ -1,8 +1,9 @@
 "use client"
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import FadeInOnScroll from "./FadeInOnScroll";
 import React from "react";
+import dynamic from "next/dynamic";
 
 export default function Home() {
   return (
@@ -314,34 +315,11 @@ function ContactFormSection() {
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitAttempted, setSubmitAttempted] = useState(false);
   const RECAPTCHA_SITE_KEY = "6LdLQncrAAAAAOyi8q91k5LWg2poAD0sCgbcm7wk";
-  const [recaptchaToken, setRecaptchaToken] = useState<string>("");
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
-
-  // Load reCAPTCHA v3 script
-  useEffect(() => {
-    if (!(window as any).grecaptcha) {
-      const script = document.createElement("script");
-      script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
-
-  async function executeRecaptcha(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const grecaptcha = (window as any).grecaptcha;
-      if (!grecaptcha) {
-        reject("reCAPTCHA not loaded");
-        return;
-      }
-      grecaptcha.ready(() => {
-        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
-          .then((token: string) => resolve(token))
-          .catch((err: any) => reject(err));
-      });
-    });
-  }
+  // Dynamically import reCAPTCHA to avoid SSR issues
+  const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"), { ssr: false });
 
   function validate(values: FormValues): FormErrors {
     const errors: FormErrors = {};
@@ -388,20 +366,14 @@ function ContactFormSection() {
       method: true,
       agree: true,
     });
+    if (!recaptchaToken) {
+      setRecaptchaError("Please complete the reCAPTCHA.");
+      return;
+    }
     if (Object.keys(validationErrors).length === 0) {
-      try {
-        const token = await executeRecaptcha();
-        if (!token) {
-          setRecaptchaError("reCAPTCHA verification failed. Please try again.");
-          return;
-        }
-        setRecaptchaToken(token);
-        // Submit form logic here, include recaptchaToken
-        alert("Form submitted! reCAPTCHA token: " + token);
-        // You should send the token to your backend for verification
-      } catch (err) {
-        setRecaptchaError("reCAPTCHA failed to load or execute. Please try again.");
-      }
+      // Submit form logic here, include recaptchaToken
+      alert("Form submitted! reCAPTCHA token: " + recaptchaToken);
+      // You should send the token to your backend for verification
     }
   }
 
@@ -532,11 +504,16 @@ function ContactFormSection() {
               <span className="text-[#e53e3e] font-freight-display-pro text-sm block mt-1">{errors.agree}</span>
             )}
           </label>
-          {/* Place reCAPTCHA v3 error and hidden token input just before submit button */}
-          {recaptchaError && (
-            <span className="text-[#e53e3e] text-sm mt-1 block">{recaptchaError}</span>
-          )}
-          <input type="hidden" name="g-recaptcha-response" value={recaptchaToken} />
+          {/* Google reCAPTCHA v2 Checkbox */}
+          <div className="w-full flex flex-col items-center my-2">
+            <ReCAPTCHA
+              sitekey={RECAPTCHA_SITE_KEY}
+              onChange={token => setRecaptchaToken(token)}
+            />
+            {recaptchaError && (
+              <span className="text-[#e53e3e] text-sm mt-1 block">{recaptchaError}</span>
+            )}
+          </div>
           <button type="submit" className="w-full bg-[#29543a] cursor-pointer hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
           <div className="flex items-start mt-2">
             <span className="text-[#222] text-xl mr-2">ⓘ</span>
