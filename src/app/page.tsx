@@ -314,7 +314,7 @@ function ContactFormSection() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitAttempted, setSubmitAttempted] = useState(false);
-  const RECAPTCHA_SITE_KEY = "6LdLQncrAAAAAOyi8q91k5LWg2poAD0sCgbcm7wk";
+  const RECAPTCHA_SITE_KEY = "6LdKQncrAAAAALxpw0EqHn4Gn1KIT0dhoXGXQu-8";
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -507,7 +507,7 @@ function ContactFormSection() {
           {/* Google reCAPTCHA v2 Checkbox */}
           <div className="w-full flex flex-col items-center my-2">
             <ReCAPTCHA
-              sitekey={'6LdLQncrAAAAAOyi8q91k5LWg2poAD0sCgbcm7wk'}
+              sitekey={RECAPTCHA_SITE_KEY}
               onChange={token => setRecaptchaToken(token)}
             />
             {recaptchaError && (
