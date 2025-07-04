@@ -491,12 +491,7 @@ function ContactFormSection() {
             )}
           </label>
 
-          {/* reCAPTCHA placeholder */}
-          <div className="w-full bg-[#f7f7f7] border border-[#b2b2b2] rounded-md flex items-center px-4 py-4 mt-2 mb-2">
-            <input type="checkbox" className="w-5 h-5 mr-3" disabled />
-            <span className="text-[#222] text-base mr-4">I&apos;m not a robot</span>
-            <span className="ml-auto text-xs text-[#b2b2b2]">reCAPTCHA<br />Privacy - Terms</span>
-          </div>
+          
           <button type="submit" className="w-full bg-[#29543a] cursor-pointer hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
           <div className="flex items-start mt-2">
             <span className="text-[#222] text-xl mr-2">ⓘ</span>
