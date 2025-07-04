@@ -59,7 +59,7 @@ body {
 
 @font-face {
   font-family: 'Freight Display Light';
-  src: url('/fonts/FreightDispProMedium-Regular.ttf') format('truetype');
+  src: url('/fonts/FreightDispProLight-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -67,6 +67,18 @@ body {
 
 .font-freight-display-light {
   font-family: 'Freight Display Light', Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Freight Display Medium';
+  src: url('/fonts/FreightDispProMedium-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-freight-display-medium {
+  font-family: 'Freight Display Medium', Arial, Helvetica, sans-serif;
 }
 
 @font-face {

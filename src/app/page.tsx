@@ -1,7 +1,8 @@
 "use client"
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import FadeInOnScroll from "./FadeInOnScroll";
+import React from "react";
 
 export default function Home() {
   return (
@@ -312,6 +313,35 @@ function ContactFormSection() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitAttempted, setSubmitAttempted] = useState(false);
+  const RECAPTCHA_SITE_KEY = "6LdLQncrAAAAAOyi8q91k5LWg2poAD0sCgbcm7wk";
+  const [recaptchaToken, setRecaptchaToken] = useState<string>("");
+  const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Load reCAPTCHA v3 script
+  useEffect(() => {
+    if (!(window as any).grecaptcha) {
+      const script = document.createElement("script");
+      script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  async function executeRecaptcha(): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const grecaptcha = (window as any).grecaptcha;
+      if (!grecaptcha) {
+        reject("reCAPTCHA not loaded");
+        return;
+      }
+      grecaptcha.ready(() => {
+        grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "submit" })
+          .then((token: string) => resolve(token))
+          .catch((err: any) => reject(err));
+      });
+    });
+  }
 
   function validate(values: FormValues): FormErrors {
     const errors: FormErrors = {};
@@ -343,9 +373,10 @@ function ContactFormSection() {
     setErrors(validate({ ...values, [name]: e.target.value }));
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitAttempted(true);
+    setRecaptchaError(null);
     const validationErrors = validate(values);
     setErrors(validationErrors);
     setTouched({
@@ -358,22 +389,33 @@ function ContactFormSection() {
       agree: true,
     });
     if (Object.keys(validationErrors).length === 0) {
-      // Submit form logic here
-      alert("Form submitted!");
+      try {
+        const token = await executeRecaptcha();
+        if (!token) {
+          setRecaptchaError("reCAPTCHA verification failed. Please try again.");
+          return;
+        }
+        setRecaptchaToken(token);
+        // Submit form logic here, include recaptchaToken
+        alert("Form submitted! reCAPTCHA token: " + token);
+        // You should send the token to your backend for verification
+      } catch (err) {
+        setRecaptchaError("reCAPTCHA failed to load or execute. Please try again.");
+      }
     }
   }
 
   return (
     <section className="w-full bg-[#f7f9fa] py-10 sm:py-16 md:py-24 px-10 sm:px-12 flex flex-col items-center justify-center">
       <div className="w-full md:w-[60%] bg-white border border-[#29543a] rounded-xl shadow-sm p-4 sm:p-8 md:p-12 flex flex-col items-center" style={{ boxShadow: '0 2px 16px 0 rgba(44,62,80,0.04)' }}>
-        <FadeInOnScroll><h2 className="font-freight-display-light font-freight-display-pro text-[#555] mb-2"
+        <FadeInOnScroll><h2 className="font-freight-display-medium font-freight-display-pro text-[#555] mb-2"
           style={{ fontSize: "clamp(1.8rem, 3.2vw, 3.2rem)" }}
         >Get In Touch</h2></FadeInOnScroll>
-        <p className="font-freight-display-light text-[#222] text-lg mb-8 text-center"
+        <p className="font-freight-display-medium text-[#222] text-lg mb-8 text-center"
           style={{ fontSize: "clamp(1rem, 2vw, 1.3rem)" }}
         >Simply fill out the brief fields below and Dr. Blake will be in touch with you soon, usually within one business day. This form is safe, private, and completely free.</p>
-        <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} noValidate>
-          <label className="font-freight-display-light text-[#222] text-lg mt-2">Name
+        <form className="w-full flex flex-col gap-4" onSubmit={handleSubmit} noValidate ref={formRef}>
+          <label className="font-freight-display-medium text-[#222] text-lg mt-2">Name
             <span className="text-[#e53e3e] ml-1">*</span>
             <input
               type="text"
@@ -383,13 +425,13 @@ function ContactFormSection() {
               value={values.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-light placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-medium placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             />
             {(touched.name || submitAttempted) && errors.name && (
               <span className="text-[#e53e3e] text-sm mt-1 block">{errors.name}</span>
             )}
           </label>
-          <label className="font-freight-display-light  text-[#222] text-lg">Phone
+          <label className="font-freight-display-medium  text-[#222] text-lg">Phone
             <span className="text-[#e53e3e] ml-1">*</span>
             <input
               type="tel"
@@ -399,13 +441,13 @@ function ContactFormSection() {
               value={values.phone}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-light placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-medium placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             />
             {(touched.phone || submitAttempted) && errors.phone && (
               <span className="text-[#e53e3e] text-sm mt-1 block">{errors.phone}</span>
             )}
           </label>
-          <label className="font-freight-display-light  text-[#222] text-lg">Email
+          <label className="font-freight-display-medium  text-[#222] text-lg">Email
             <span className="text-[#e53e3e] ml-1">*</span>
             <input
               type="email"
@@ -415,13 +457,13 @@ function ContactFormSection() {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-light placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-medium placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             />
             {(touched.email || submitAttempted) && errors.email && (
               <span className="text-[#e53e3e] text-sm mt-1 block">{errors.email}</span>
             )}
           </label>
-          <label className="font-freight-display-light  text-[#222] text-lg">What brings you here?
+          <label className="font-freight-display-medium  text-[#222] text-lg">What brings you here?
             <span className="text-[#e53e3e] ml-1">*</span>
             <textarea
               name="message"
@@ -431,13 +473,13 @@ function ContactFormSection() {
               value={values.message}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-light placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a] resize-none"
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-medium placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a] resize-none"
             />
             {(touched.message || submitAttempted) && errors.message && (
               <span className="text-[#e53e3e] text-sm mt-1 block">{errors.message}</span>
             )}
           </label>
-          <label className="font-freight-display-light  text-[#222] text-lg">Preferred time to reach you
+          <label className="font-freight-display-medium  text-[#222] text-lg">Preferred time to reach you
             <span className="text-[#e53e3e] ml-1">*</span>
             <input
               type="text"
@@ -447,14 +489,14 @@ function ContactFormSection() {
               value={values.time}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-light placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+              className="mt-1 w-full border border-[#29543a] rounded-md px-4 py-2 text-lg font-freight-display-medium placeholder-[#b2b2b2] focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             />
             <span className="text-[#222] text-sm mt-1">Let us know when you&apos;re typically available for a call or consultation</span>
             {(touched.time || submitAttempted) && errors.time && (
               <span className="text-red-500 text-sm mt-1 block">{errors.time}</span>
             )}
           </label>
-          <label className="font-freight-display-light  text-[#222] text-lg">Preferred Contact Method
+          <label className="font-freight-display-medium  text-[#222] text-lg">Preferred Contact Method
             <span className="text-[#e53e3e] ml-1">*</span>
             <select
               name="method"
@@ -462,7 +504,7 @@ function ContactFormSection() {
               value={values.method}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="mt-1 w-full border border-[#222] rounded-md px-4 py-2 text-lg font-freight-display-light bg-white focus:outline-none focus:ring-2 focus:ring-[#29543a]"
+              className="mt-1 w-full border border-[#222] rounded-md px-4 py-2 text-lg font-freight-display-medium bg-white focus:outline-none focus:ring-2 focus:ring-[#29543a]"
             >
               <option value="">Select preferred method</option>
               <option value="phone">Phone</option>
@@ -484,18 +526,21 @@ function ContactFormSection() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
-              <span className="text-[#222] font-freight-display-light text-lg">I agree to be contacted</span>
+              <span className="text-[#222] font-freight-display-medium text-lg">I agree to be contacted</span>
             </div>
             {(touched.agree || submitAttempted) && errors.agree && (
               <span className="text-[#e53e3e] font-freight-display-pro text-sm block mt-1">{errors.agree}</span>
             )}
           </label>
-
-          
+          {/* Place reCAPTCHA v3 error and hidden token input just before submit button */}
+          {recaptchaError && (
+            <span className="text-[#e53e3e] text-sm mt-1 block">{recaptchaError}</span>
+          )}
+          <input type="hidden" name="g-recaptcha-response" value={recaptchaToken} />
           <button type="submit" className="w-full bg-[#29543a] cursor-pointer hover:bg-[#1e3d2a] text-white text-lg font-freight-display-pro rounded-md py-3 mt-2 mb-1 transition-colors">Submit</button>
           <div className="flex items-start mt-2">
             <span className="text-[#222] text-xl mr-2">ⓘ</span>
-            <span className="text-[#222] font-freight-display-light text-xl">By clicking submit you consent to receive texts and emails from Dr. Serena Blake.</span>
+            <span className="text-[#222] font-freight-display-medium text-xl">By clicking submit you consent to receive texts and emails from Dr. Serena Blake.</span>
           </div>
         </form>
       </div>
