@@ -99,7 +99,7 @@ export default function Home() {
             Therapy can be a space where you invest in yourself—one of the highest forms of self-care.
           </h3></FadeInOnScroll>
           <FadeInOnScroll className="flex justify-center"><p className="font-freight-sans-pro text-[#222] text-lg md:text-[20px] text-center max-w-full w-[90%] md:max-w-[72%] mb-4 sm:mb-8 leading-7 sm:leading-8">
-            You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you don&apos;t have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
+            You may be led to therapy by anxiety, depression, relationship stress, past or recent trauma, grief and loss, self-esteem issues, or challenges with family, parenting, or parental relationships. Whatever the source of your stress, you&apos;t have to face it alone. Therapy offers you the time and space to work toward wellness and peace.
           </p></FadeInOnScroll>
           <hr className="w-full border-1 border-[#aaa] mt-8" />
         </div>
@@ -116,7 +116,7 @@ export default function Home() {
             </FadeInOnScroll>
             <FadeInOnScroll><h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Anxiety & Stress Management </h3></FadeInOnScroll>
             <FadeInOnScroll><p className="font-freight-sans-pro text-black text-base leading-7">
-              Learn practical strategies to manage anxiety and stress, whether it stems from work, relationships, or daily life. Together, we'll identify triggers and build coping skills to help you feel more balanced and in control. Therapy provides a supportive space to foster resilience and lasting calm.
+              Learn practical strategies to manage anxiety and stress, whether it stems from work, relationships, or daily life. Together, we&rsquo;ll identify triggers and build coping skills to help you feel more balanced and in control. Therapy provides a supportive space to foster resilience and lasting calm.
             </p></FadeInOnScroll>
           </div>
           {/* Column 2 */}
@@ -128,7 +128,7 @@ export default function Home() {
             </FadeInOnScroll>
             <FadeInOnScroll><h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Relationship Counseling</h3></FadeInOnScroll>
             <FadeInOnScroll><p className="font-freight-sans-pro text-black text-base leading-7">
-              Strengthen your relationships and improve communication with those who matter most. We'll address patterns that create conflict or distance, and work toward building trust, understanding, and deeper connection. Counseling is tailored to your unique relationship needs and goals.
+              Strengthen your relationships and improve communication with those who matter most. We&rsquo;ll address patterns that create conflict or distance, and work toward building trust, understanding, and deeper connection. Counseling is tailored to your unique relationship needs and goals.
             </p></FadeInOnScroll>
           </div>
           {/* Column 3 */}
@@ -139,7 +139,7 @@ export default function Home() {
             </FadeInOnScroll>
             <FadeInOnScroll><h3 className="font-freight-display-light text-[#202020] text-[25px] mb-4">Trauma Recovery</h3></FadeInOnScroll>
             <FadeInOnScroll><p className="font-freight-sans-pro text-black text-base leading-7">
-              Heal from trauma and reclaim your sense of safety and self-worth. Therapy offers a compassionate space to process difficult experiences, reduce distress, and move forward at your own pace. You'll gain tools to manage symptoms and foster personal growth.
+              Heal from trauma and reclaim your sense of safety and self-worth. Therapy offers a compassionate space to process difficult experiences, reduce distress, and move forward at your own pace. You&rsquo;ll gain tools to manage symptoms and foster personal growth.
             </p></FadeInOnScroll>
           </div>
         </div>
