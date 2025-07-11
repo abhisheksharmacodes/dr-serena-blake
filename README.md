@@ -1,4 +1,4 @@
-# Dr. Serena Blake — Psychological Services Website
+# Dr. Serena Blake — Landing page
 
 A modern, elegant website for a psychological services practice, built with Next.js and Tailwind CSS. Features a responsive landing page, service descriptions, rates and insurance info, FAQ accordion, contact form with validation and reCAPTCHA, and a visually engaging design.
 
